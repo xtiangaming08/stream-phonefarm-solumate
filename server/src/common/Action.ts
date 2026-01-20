@@ -1,0 +1,17 @@
+export enum ACTION {
+    LIST_HOSTS = 'list-hosts',
+    APPL_DEVICE_LIST = 'appl-device-list',
+    GOOG_DEVICE_LIST = 'goog-device-list',
+    MULTIPLEX = 'multiplex',
+    SHELL = 'shell',
+    PROXY_WS = 'proxy-ws',
+    PROXY_ADB = 'proxy-adb',
+    DEVTOOLS = 'devtools',
+    STREAM_SCRCPY = 'stream',
+    STREAM_WS_QVH = 'stream-qvh',
+    STREAM_MJPEG = 'stream-mjpeg',
+    PROXY_WDA = 'proxy-wda',
+    FILE_LISTING = 'list-files',
+    RECORD_STATUS = 'record-status',
+    DEVICES_LIST = 'devices-list',
+}

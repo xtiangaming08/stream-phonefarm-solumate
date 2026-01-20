@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "typings/*"
+      ]
+    },
+    "target": "es2019",
+    "module": "commonjs",
+    "lib": [
+      "es2019",
+      "dom"
+    ],
+    "types": [
+      "node"
+    ],
+    "downlevelIteration": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "./typings/**/*",
+    "./src/server/**/*",
+    "./src/common/**/*",
+    "./src/packages/**/*",
+    "./src/types/**/*"
+  ]
+}

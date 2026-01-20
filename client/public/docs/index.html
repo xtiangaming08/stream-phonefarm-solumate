@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scrcpy multi - Docs</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0e0f12;
+        --card: #151821;
+        --border: #242a38;
+        --accent: #3ad598;
+        --text: #e9edf5;
+        --muted: #9fb2c7;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: radial-gradient(circle at 20% 20%, rgba(58, 213, 152, 0.08), transparent 38%),
+          radial-gradient(circle at 80% 0%, rgba(58, 127, 213, 0.08), transparent 36%),
+          var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        padding: 22px;
+      }
+      .layout {
+        max-width: 1080px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .logo {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #2fd392, #2f8ad5);
+        display: grid;
+        place-items: center;
+        font-weight: 900;
+        color: #0b1b15;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      }
+      h1 {
+        margin: 0;
+        font-size: 22px;
+      }
+      .pill {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.03);
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 14px 16px;
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      h2 {
+        margin: 0 0 6px;
+        font-size: 18px;
+      }
+      h3 {
+        margin: 0 0 4px;
+        font-size: 15px;
+        color: var(--text);
+      }
+      p {
+        margin: 0 0 8px;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+      ul {
+        margin: 0 0 8px 18px;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 10px;
+      }
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 8px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .accent {
+        color: var(--accent);
+      }
+      .footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 6px;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <header>
+        <div class="brand">
+          <div class="logo">SM</div>
+          <div>
+            <h1>scrcpy multi - Docs</h1>
+            <div class="pill">Tóm tắt nhanh</div>
+          </div>
+        </div>
+        <div class="tag">WS mặc định: ws://127.0.0.1:11000/</div>
+      </header>
+
+      <div class="card">
+        <h2>1) Khởi chạy</h2>
+        <p>
+          Thêm <code>?device=&lt;udid&gt;</code> để chỉ mở 1 thiết bị hoặc
+          <code>?ws=&lt;url&gt;</code> để đổi endpoint. Tiles tự lấy danh sách từ tracker backend nếu có.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>2) Lưới tile & điều khiển</h2>
+        <ul>
+          <li>Header: số thứ tự, udid, trạng thái. Nút ⠿ (kéo đổi vị trí), ↻ (reload), ⋯ (menu, viewer 👁).</li>
+          <li>Menu: reload, shell, file list, power/volume, screenshot, mở viewer tab riêng.</li>
+          <li>Thanh dưới: Back / Home / Recent.</li>
+          <li>Kích thước tile chỉnh ở cột phải (width), height tự tính theo tỉ lệ stream.</li>
+          <li>Kéo nút ⠿ sang tile khác để reorder (lưu localStorage: tileOrder).</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>3) Viewer (👁)</h2>
+        <ul>
+          <li>Mở từ menu tile, kéo bằng header, chỉ 1 viewer cùng lúc.</li>
+          <li>Overlay làm mờ tile gốc; đóng viewer trả config về global.</li>
+          <li>Cấu hình riêng (width, bitrate/FPS/bounds, khóa xoay) đặt trong cột phải khi viewer mở.</li>
+          <li>Tabs Files/Apps tái sử dụng stream sẵn có (không mở WS mới).</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>4) Cột phải</h2>
+        <div class="grid">
+          <div>
+            <h3>Kích thước tile</h3>
+            <p>Slider width, height tự tính. Lưu localStorage.</p>
+          </div>
+          <div>
+            <h3>Cấu hình stream</h3>
+            <p>
+              View width (viewer), Bitrate, FPS, Chiều rộng stream (height auto), Khóa xoay, Đặt lại mặc định.
+              Khi viewer mở, áp dụng riêng thiết bị đó.
+            </p>
+          </div>
+          <div>
+            <h3>Điều khiển nhanh</h3>
+            <p>Power, Vol +/-, Mute, Back, Home, Recent, Screenshot (device active hoặc nhóm sync).</p>
+          </div>
+          <div>
+            <h3>Sync thiết bị</h3>
+            <p>Bật/tắt sync, chọn device chính (radio), follower dạng lưới checkbox, dừng sync.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>5) Sync</h2>
+        <ul>
+          <li>Bật sync → chọn main & follower trong cột phải.</li>
+          <li>Trạng thái lưu trong ActiveContext (localStorage syncAll, syncMain, syncTargets).</li>
+          <li>Tắt sync để điều khiển đơn lẻ.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>6) Shell & File</h2>
+        <ul>
+          <li>
+            Hash actions: <code>#!action=shell&udid=...</code> (Shell), <code>#!action=list-files&udid=...&path=...</code>
+            (file listing).
+          </li>
+          <li>Menu tile có mở shell/file list tab mới cho UDID đó.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>7) Lưu cục bộ</h2>
+        <p>
+          localStorage: deviceDimensions, tileOrder, viewerWidthPx, sync*. Config viewer override chỉ tồn tại runtime.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>8) Troubleshooting</h2>
+        <ul>
+          <li>Màn hình đen: kiểm tra WS backend, giảm bitrate/FPS, dùng nút ↻.</li>
+          <li>Không thấy thiết bị: thêm ?device=&lt;udid&gt; hoặc kiểm tra tracker WS.</li>
+          <li>Reorder không lưu: xóa localStorage tileOrder rồi reload.</li>
+        </ul>
+      </div>
+
+      <div class="footer">docs served at /docs • cần hình minh họa: hãy chụp trực tiếp trong ứng dụng</div>
+    </div>
+  </body>
+</html>
