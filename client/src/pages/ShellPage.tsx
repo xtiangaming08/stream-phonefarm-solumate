@@ -129,9 +129,9 @@ export function ShellPage ({ wsServer, udid }: Props) {
       <div className='pageHeader'>
         <div className='title'>ADB Shell</div>
         <div className='subtitle'>udid: {udid || 'n/a'}</div>
-        {status ? <div className='statusLine'>{status}</div> : null}
+        {/* {status ? <div className='statusLine'>{status}</div> : null} */}
       </div>
-      <div className='shellContainer' ref={containerRef} />
+      {/* <div className='shellContainer' ref={containerRef} /> */}
     </div>
   )
 }

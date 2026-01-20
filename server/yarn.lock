@@ -3576,11 +3576,6 @@ mv@^2.1.1:
     ncp "~2.0.0"
     rimraf "~2.4.0"
 
-nan@^2.14.0:
-  version "2.24.0"
-  resolved "https://registry.npmjs.org/nan/-/nan-2.24.0.tgz"
-  integrity sha512-Vpf9qnVW1RaDkoNKFUvfxqAbtI8ncb8OJlqZ9wwpXzWPEsvsB1nvdUi6oYrHIkQ1Y/tMDnr1h4nczS0VB9Xykg==
-
 natural-compare-lite@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/natural-compare-lite/-/natural-compare-lite-1.4.0.tgz"
@@ -3627,13 +3622,6 @@ node-mjpeg-proxy@^0.3.2:
   version "0.3.2"
   resolved "https://registry.npmjs.org/node-mjpeg-proxy/-/node-mjpeg-proxy-0.3.2.tgz"
   integrity sha512-xZAHAF1LK1DSSgvEQnWJQ3/la+oqaVkEVWqYtGNvte0/Dt8B8trcqjjdJulYliCM+TLdkjwxu+uG4CNmpzZ2Tg==
-
-node-pty@^0.10.1:
-  version "0.10.1"
-  resolved "https://registry.npmjs.org/node-pty/-/node-pty-0.10.1.tgz"
-  integrity sha512-JTdtUS0Im/yRsWJSx7yiW9rtpfmxqxolrtnyKwPLI+6XqTAPW/O2MjS8FYL4I5TsMbH2lVgDb2VMjp+9LoQGNg==
-  dependencies:
-    nan "^2.14.0"
 
 node-releases@^2.0.27:
   version "2.0.27"

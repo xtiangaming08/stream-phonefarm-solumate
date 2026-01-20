@@ -8,7 +8,7 @@
         "build:dev": "webpack --config webpack/ws-scrcpy.dev.ts --stats-error-details --watch",
         "build": "webpack --config webpack/ws-scrcpy.prod.ts --stats-error-details",
         "start:dist": "node dist/index.js",
-        "start":"npm run build && npm run start:dist"
+        "start": "npm run build && npm run start:dist"
     },
     "author": "Sergey Volkov <drauggres@gmail.com>",
     "license": "MIT",
@@ -17,7 +17,6 @@
         "express": "^4.21.2",
         "ios-device-lib": "^0.9.2",
         "node-mjpeg-proxy": "^0.3.2",
-        "node-pty": "^0.10.1",
         "nodemon": "^3.1.11",
         "portfinder": "^1.0.28",
         "tslib": "^2.3.1",
